@@ -29,7 +29,7 @@ result_global_ds = xr.merge([ugrd10m, vgrd10m])
 # Rename the variables
 result_global_ds = result_global_ds.rename({'ugrd10m':'U10', 'vgrd10m':'V10','lon':'longitude','lat':'latitude'})
 
-outputfile = outputpath + 'gfsforecast/' + startdatestamp + cycle + '/gfs' + startdatestamp + cycle + '.nc'
+outputfile = outputpath + 'gfsforecast/' + startdatestamp + cycle + '/gfs' + startdatestamp + cycle + '_3hr.nc'
 os.makedirs(outputpath + 'gfsforecast/' + startdatestamp + cycle, exist_ok=True)
 result_global_ds.to_netcdf(outputfile)
 print('GFS downloaded file: ', outputfile)
